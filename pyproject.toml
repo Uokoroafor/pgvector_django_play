@@ -1,0 +1,16 @@
+[project]
+name = "basic-pgvector"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-community>=0.3.12",
+    "langchain>=0.3.12",
+    "pgvector>=0.3.6",
+    "psycopg2-binary>=2.9.10",
+    "python-decouple>=3.8",
+    "openai>=1.57.4",
+    "tiktoken>=0.8.0",
+    "langchain-openai>=0.2.12",
+]
