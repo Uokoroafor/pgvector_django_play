@@ -12,7 +12,9 @@ if not OPENAI_API_KEY:
 loader = TextLoader("data/state_of_the_union.txt", encoding="utf8")
 documents = loader.load()
 
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=80)
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000, chunk_overlap=80
+)
 texts = text_splitter.split_documents(documents=documents)
 
 print(len(texts))
@@ -26,7 +28,9 @@ embeddings = OpenAIEmbeddings()
 # len(doc_vectors)
 # print([len(vec) for vec in doc_vectors])
 
-CONNECTION_STRING = "postgresql+psycopg2://postgres:password@localhost:5432/vector_db"
+CONNECTION_STRING = (
+    "postgresql+psycopg2://postgres:password@localhost:5432/vector_db"
+)
 COLLECTION_NAME = "state_of_union_documents"
 
 # db = PGVector.from_documents(
