@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Database Updated</h1>
+
+<h4>The Below Text has been added to the database</h4>
+<p>{{text}}</p>
+
+<h4>Embedding</h4>
+<pre>{{embedding}}</pre>
+
+<h4>Primary Key</h4>
+<p>{{primary_key}}</p>
+
+
+<a href="{% url 'index' %}">Return to Full List</a>
+{% endblock %}

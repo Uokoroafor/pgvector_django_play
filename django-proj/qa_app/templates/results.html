@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Results</h1>
+
+<h3>Original Text</h3>
+<p>{{text}}</p>
+<h3>Most Similar Document</h3>
+<p>{{most_similar.document}}</p>
+
+<a href="{% url 'index' %}">Return to Full List</a>
+{% endblock %}
