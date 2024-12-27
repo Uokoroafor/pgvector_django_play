@@ -14,5 +14,9 @@ dependencies = [
     "tiktoken>=0.8.0",
     "langchain-openai>=0.2.12",
     "django>=5.1.4",
+]
+
+[dependency-groups]
+dev = [
     "pre-commit>=4.0.1",
 ]
