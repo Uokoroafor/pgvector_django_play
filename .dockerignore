@@ -87,3 +87,7 @@ venv/
 
 # VS Code
 .vscode/
+
+# pre-commit folders
+.mypy_cache
+.ruff_cache
