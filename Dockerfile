@@ -31,8 +31,8 @@ COPY uv.lock pyproject.toml /code/
 RUN uv lock --check && uv export --no-dev --format requirements-txt --no-hashes -o proj_requirements.txt
 RUN pip install --no-cache-dir -r proj_requirements.txt
 
-# copy the project code into the container's working directory
-COPY ./django-proj /code
+# # copy the project code into the container's working directory
+# COPY ./django-proj /code
 
 # Clean up apt cache to reduce image size
 RUN apt-get remove --purge -y \
@@ -44,7 +44,12 @@ RUN apt-get remove --purge -y \
 # when the container starts
 COPY ./entrypoint.sh /
 COPY generate_env.py /
+COPY load_texts.py /
+COPY get_texts.sh /
+COPY text_links.csv /
+
 # make the bash script executable
-RUN chmod +x entrypoint.sh
+RUN chmod +x /entrypoint.sh 
+RUN chmod +x /get_texts.sh
 
 ENTRYPOINT ["sh", "/entrypoint.sh"]
