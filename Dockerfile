@@ -32,7 +32,7 @@ RUN uv lock --check && uv export --no-dev --format requirements-txt --no-hashes 
 RUN pip install --no-cache-dir -r proj_requirements.txt
 
 # # copy the project code into the container's working directory
-# COPY ./django-proj /code
+COPY ./django-proj /code/
 
 # Clean up apt cache to reduce image size
 RUN apt-get remove --purge -y \
@@ -42,14 +42,14 @@ RUN apt-get remove --purge -y \
 
 # Run the Django project via the runtime script
 # when the container starts
-COPY ./entrypoint.sh /
-COPY generate_env.py /
-COPY load_texts.py /
-COPY get_texts.sh /
-COPY text_links.csv /
+COPY ./entrypoint.sh /code/
+COPY ./generate_env.py /code/
+COPY ./load_texts.py /code/
+COPY ./get_texts.sh /code/
+COPY ./text_links.csv /code/
+COPY ./.env /code/
 
 # make the bash script executable
-RUN chmod +x /entrypoint.sh 
-RUN chmod +x /get_texts.sh
+RUN chmod +x /code/entrypoint.sh /code/get_texts.sh
 
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+ENTRYPOINT ["sh", "/code/entrypoint.sh"]
