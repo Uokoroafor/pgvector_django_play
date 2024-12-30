@@ -42,12 +42,7 @@ RUN apt-get remove --purge -y \
 
 # Run the Django project via the runtime script
 # when the container starts
-COPY ./entrypoint.sh /code/
-COPY ./generate_env.py /code/
-COPY ./load_texts.py /code/
-COPY ./get_texts.sh /code/
-COPY ./text_links.csv /code/
-COPY ./.env /code/
+COPY ./entrypoint.sh ./generate_env.py ./load_texts.py ./get_texts.sh ./text_links.csv ./.env /code/
 
 # make the bash script executable
 RUN chmod +x /code/entrypoint.sh /code/get_texts.sh
