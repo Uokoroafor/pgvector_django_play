@@ -88,9 +88,11 @@ venv/
 # VS Code
 .vscode/
 
-# pre-commit folders
+# pre-commit folders and files
 .mypy_cache/
 .ruff_cache/
-
 .pre-commit-config.yaml
 .pre-commit-ignore
+
+# Image folders
+images/
