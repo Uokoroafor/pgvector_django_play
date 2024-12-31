@@ -2,7 +2,7 @@
 # PGVector Play
 
 ## Overview
-This project is a Django-based web application with a Postgres database with PGVector for similarity search and deployment using Docker. So this was a great opportunity to experiment with Django and PGVector It includes:
+This project is a Django-based web application with a PostgreSQL database with PGVector for similarity search and deployment using Docker. This project explores Django and PGVector, showcasing their capabilities in a containerised environment. It includes:
 
 - A PostgreSQL database with pgvector for vector similarity.
 - A Dockerised environment for ease of use.
@@ -23,12 +23,11 @@ This project is a Django-based web application with a Postgres database with PGV
 ## Setup Instructions
 1. Clone the Repository:
 ```bash
-Copy code
-git clone https://github.com/Uokoroafor/basic_pgvector.git
+git clone https://github.com/Uokoroafor/pgvector_django_play.git
 cd basic_pgvector
 ```
 2. Add Environment Variables
-Create a `.env` file in the root directory and configure it. You can simply alter the `.env.sample` file and adjust the variables as required own need:
+Create a `.env` file in the root directory and configure it. You can simply alter the `.env.sample` file and adjust the variables to your needs:
 ```env
 OPENAI_API_KEY=<An OpenAI API Key>
 DB_NAME="vector_db"
