@@ -5,7 +5,6 @@ from pgvector.django import CosineDistance
 from uuid import uuid4
 
 
-# Create your views here.
 def index(request):
     if request.method == "POST":
         if "index_search" in request.POST:

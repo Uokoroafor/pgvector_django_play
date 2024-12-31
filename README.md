@@ -14,8 +14,8 @@ This project is a Django-based web application with a PostgreSQL database with P
 1. **Django Web Framework**: Powering the web application.
 1. **Dockerised Environment**: Simplifies development and deployment.
 1. **PostgreSQL with PGVector**: Enhancing search capabilities with vector similarity.
+1. **Front-End**: Built using HTML and CSS for simple and effective UI design.
 1. **Environment Variables**: Easy configuration using .env.
-
 
 ## Prerequisites
 1. To run using the docker-compose command, please ensure you have [Docker](https://docs.docker.com/engine/install/) installed. Otherwise, ensure you have local or containerised installations of PostgreSQL and PGVector.
