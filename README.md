@@ -1,5 +1,7 @@
 
-# PGVector Play
+# PGVector Django Play
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Dockerized](https://img.shields.io/badge/Dockerized-✔-blue)](https://www.docker.com/)
 
 ## Overview
 This project is a Django-based web application with a PostgreSQL database with PGVector for similarity search and deployment using Docker. This project explores Django and PGVector, showcasing their capabilities in a containerised environment. It includes:
@@ -51,16 +53,16 @@ Adjust the ports in use as required. If no changes are made to `text_links.csv`,
 It is also possible to run locally. There are a few more initial setup steps.
 - First create the require database (Note that vector_db and postgres below are used because they are the same as the environment variable.)
 ```sql
--- Connect to the default database (e.g., postgres) as a superuser
+-- Switch to the default PostgreSQL database
 \c postgres;
 
--- Create a new database
+-- Create a new database named 'vector_db'
 CREATE DATABASE vector_db;
 
--- Connect to the newly created database
+-- Switch to the newly created database
 \c vector_db;
 
--- Enable the pgvector extension
+-- Enable the pgvector extension (requires superuser privileges)
 CREATE EXTENSION IF NOT EXISTS vector;
 ```
 - Install [uv](https://docs.astral.sh/uv/getting-started/installation/#pypi) which is used for dependency management either using curl or pip
@@ -84,12 +86,12 @@ python manage.py runserver
 
 
 ## Access the Application
-Unless you adjust the ports, the Django application will be accessible by default at http://localhost:8000 and the PostgreSQL database will be exposed on port 5432.
+After starting the server, the Django application will be accessible at http://localhost:8000 and the PostgreSQL database will be accessible on port 5432 using default credentials provided by the `.env` file.
 
 ## License
 This project is licensed under the MIT License.
 
-This was an interesting mini-project. I hope you get some utility from this. Please reach out with any issues or concerns.
+This project was a fascinating dive into the integration of Django, PGVector, and Docker. I hope you find it valuable! Feel free to open an issue or reach out with any questions or feedback.
 
 ## Screenshots
 
@@ -97,3 +99,6 @@ This was an interesting mini-project. I hope you get some utility from this. Ple
 
 1. To find the chunk closest to the query text, click the search button. This is done via cosine similarity in PGVector
 1. To add new text to the database, click the submit button.
+
+## Acknowledgements
+I got a phenomenal head start on this by looking at work done by [bugbytes](https://bugbytes.io/).
