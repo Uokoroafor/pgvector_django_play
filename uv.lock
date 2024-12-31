@@ -125,10 +125,14 @@ dependencies = [
     { name = "langchain-openai" },
     { name = "openai" },
     { name = "pgvector" },
-    { name = "pre-commit" },
     { name = "psycopg2-binary" },
     { name = "python-decouple" },
     { name = "tiktoken" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pre-commit" },
 ]
 
 [package.metadata]
@@ -139,11 +143,13 @@ requires-dist = [
     { name = "langchain-openai", specifier = ">=0.2.12" },
     { name = "openai", specifier = ">=1.57.4" },
     { name = "pgvector", specifier = ">=0.3.6" },
-    { name = "pre-commit", specifier = ">=4.0.1" },
     { name = "psycopg2-binary", specifier = ">=2.9.10" },
     { name = "python-decouple", specifier = ">=3.8" },
     { name = "tiktoken", specifier = ">=0.8.0" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pre-commit", specifier = ">=4.0.1" }]
 
 [[package]]
 name = "certifi"
